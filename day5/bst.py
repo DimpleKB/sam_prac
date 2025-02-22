@@ -85,24 +85,24 @@ class Bst:
             else:
                 temp2.right = link
 
-        data=int(input("enter data ato be deleted"))
-        cur=self.root
-        parent=None
-        while(cur.data!=data):
-            parent=cur
-            if cur.data > data:
-                cur=cur.left
-            else:
-                cur=cur.right
-        if cur.left is None and cur.right is None:
-            if parent.left is cur:
-                parent.left=None
-            else:
-                parent.right=None
-            return 
-        if cur.left is None or cur.right is None:
-            if cur.right is None:
-                parent.right= 
+        # data=int(input("enter data ato be deleted"))
+        # cur=self.root
+        # parent=None
+        # while(cur.data!=data):
+        #     parent=cur
+        #     if cur.data > data:
+        #         cur=cur.left
+        #     else:
+        #         cur=cur.right
+        # if cur.left is None and cur.right is None:
+        #     if parent.left is cur:
+        #         parent.left=None
+        #     else:
+        #         parent.right=None
+        #     return 
+        # if cur.left is None or cur.right is None:
+        #     if cur.right is None:
+        #         parent.right= 
         
 
 

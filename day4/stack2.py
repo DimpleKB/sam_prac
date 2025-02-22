@@ -1,3 +1,5 @@
+#rear insertion and deletion
+
 class stack:
     def __init__(self,size=3):
         self.stk=[]
