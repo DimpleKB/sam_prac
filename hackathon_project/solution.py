@@ -3,15 +3,14 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load the data into a DataFrame
-file_path = r"sam_prac\hackathon_project\engineering_branch_data - Sheet1 (1).csv"
+file_path = r"C:\Users\DIMPLE K B\Downloads\folder\sam_prac\hackathon_project\engineering_branch_data - Sheet1 (1).csv"
 df = pd.read_csv(file_path)
 
 # 1. **Which branch has the highest risk for students?**  
 def highest_risk_branch(df):
-    highest_risk = df.loc[(df['Dropout Rates (%)'] > 8) & 
-                           (df['Current Demand'].isin(['Low', 'Very Low'])) & 
-                           (df['Job Market Stability'].isin(['Low', 'Moderate']))]
-    return highest_risk[['Branch Name', 'Dropout Rates (%)', 'Current Demand', 'Job Market Stability']]
+    return df.loc[df["Dropout Rates (%)"].idxmax(), "Branch Name"]
+
+
 
 # 2. **Which branch has the best mix of gender diversity and career stability?**
 def best_gender_career_mix(df):
@@ -34,14 +33,23 @@ struggling = struggling_branch(df)
 # Visualizations
 
 # 1. Visualization for Highest Risk Branch
-plt.figure(figsize=(10, 6))
-sns.barplot(x='Branch Name', y='Dropout Rates (%)', data=df, palette='coolwarm')
-plt.title("Dropout Rates by Branch")
-plt.xlabel("Branch Name")
-plt.ylabel("Dropout Rates (%)")
-plt.xticks(rotation=45)
+
+colors = ['red' if branch == highest_risk else 'gray' for branch in df["Branch Name"]]
+
+# Create figure and axis
+fig, ax = plt.subplots(figsize=(10, 5))
+
+# Dropout Rates Bar Chart
+ax.bar(df["Branch Name"], df["Dropout Rates (%)"], color=colors, alpha=0.7)
+ax.set_title("Dropout Rates Across Branches")
+ax.set_xticks(range(len(df["Branch Name"])))  # Ensuring correct x-tick placement
+ax.set_xticklabels(df["Branch Name"], rotation=45, ha="right")
+ax.set_ylabel("Dropout Rate (%)")
+
+# Show the plot
 plt.tight_layout()
 plt.show()
+
 
 # 2. Visualization for Best Gender Diversity and Career Stability
 plt.figure(figsize=(10, 6))

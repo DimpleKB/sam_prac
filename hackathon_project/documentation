@@ -1,0 +1,63 @@
+----Engineering Branch Analysis Program Documentation---------
+
+
+This program analyzes different engineering branches based on various factors such as dropout rates, gender diversity, job market stability, and industry collaboration. It identifies:
+
+1.)The highest-risk branches for students.
+2.)The best mix of gender diversity and career stability.
+3.)The branches struggling despite strong industry collaboration.
+4.)It also visualizes the results using bar charts.
+
+
+1.Identifying the Branch with the Highest Risk for Students
+
+Objective:
+The goal of this analysis is to determine which engineering branch poses the highest risk for students. The analysis is based on three key 
+
+factors:
+Dropout Rates (%): Higher dropout rates indicate a challenging curriculum, lack of interest, or poor job prospects.
+Current Demand: If the demand for a branch is "Low" or "Very Low," it suggests fewer job opportunities in the market.
+Job Market Stability: A "Low" or "Moderate" job market stability implies fewer long-term career prospects.
+
+Methodology:
+To identify the highest-risk branches, the program filters the dataset using the following conditions:
+
+->Dropout Rates (%) > 8%
+->Current Demand is either "Low" or "Very Low."
+->Job Market Stability is either "Low" or "Moderate."
+Only branches that satisfy all three conditions are considered high-risk
+
+
+2. Identifying the Branch with the Best Mix of Gender Diversity and Career Stability
+
+Objective: 
+The goal of this analysis is to determine which engineering branches offer a balanced mix of gender diversity and career stability.
+
+Key Factors Considered:
+Gender Diversity: A branch with a higher percentage of female students (≥ 30%) is considered more diverse.
+Job Market Stability: Branches classified as "Stable" in job market stability indicate secure career prospects.
+
+Methodology:
+The dataset is filtered using the following conditions:
+->Gender Diversity ≥ 30% female students
+->Job Market Stability = "Stable"
+Branches that meet both criteria are selected.
+
+
+
+3.Identifying Branches Struggling Despite Strong Industry Collaboration
+
+Objective:
+The purpose of this analysis is to identify engineering branches that have strong industry collaboration but are still struggling due to low demand and poor placement rates. This helps understand cases where industry support exists, but career opportunities remain limited.
+
+Key Factors Considered:
+Industry Collaboration: The branch must have "Strong" industry collaboration.
+Current Demand: The demand for the branch must be "Low" or "Very Low", indicating fewer job opportunities.
+Placements (%): The percentage of students placed should be less than 75%, highlighting job market difficulties.
+
+Methodology:
+The dataset is filtered using the following conditions:
+->Industry Collaboration = "Strong"
+->Current Demand = "Low" or "Very Low"
+->Placements (%) < 75%
+Branches meeting all these criteria are considered struggling despite strong industry collaboration.
