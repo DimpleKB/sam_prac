@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load the data into a DataFrame
-file_path = r"C:\Users\SIC\Downloads\learning\my_folder\sam_prac\hackathon_project\engineering_branch_data - Sheet1 (1).csv"
+file_path = r"sam_prac\hackathon_project\engineering_branch_data - Sheet1 (1).csv"
 df = pd.read_csv(file_path)
 
 # 1. **Which branch has the highest risk for students?**  
